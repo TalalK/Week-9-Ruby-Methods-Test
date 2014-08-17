@@ -1,22 +1,40 @@
 # keep only the elements that start with an a
 def select_elements_starting_with_a(array)
+	n = %w{bananas apples pear avocados} 
+	n.select {|a| a[0] == 'a' }
+	# n.select { |fruit| fruit == n.start_with? 'a' }
 end
 
 # keep only the elements that start with a vowel
 def select_elements_starting_with_vowel(array)
+	n = %w{john david omar fred idris angela}
+	# n.select { |a| a[0] =~ /[aeiou]/ }
+	n.select { |a| a[0][/[aieou]/] }
+	# n.select { |a| a.start_with?(*%w(a i e o u)) }
 end
 
 # remove instances of nil (but NOT false) from an array
 def remove_nils_from_array(array)
+	n =  ['a', 'b', nil, nil, false, 'c', nil].compact
 end
 
 # remove instances of nil AND false from an array
 def remove_nils_and_false_from_array(array)
+	n =  ['a', 'b', nil, nil, false, 'c', nil].compact
+	n.reject {|n| n == false}
+	# n.delete("nill", "false")
 end
 
 # don't reverse the array, but reverse every word inside it. e.g.
 # ['dog', 'monkey'] becomes ['god', 'yeknom']
 def reverse_every_element_in_array(array)
+	animals = %w{dog monkey elephant}
+	# a = []
+	# animals.reverse_each do |animal|
+	# 	a << animal.reverse
+	# end
+	# a
+	animals.map {| animals | animals.reverse}
 end
 
 # given an array of student names, like ['Bob', 'Dave', 'Clive']
